@@ -8,7 +8,7 @@ body
 {
    margin:0;
    height: 100vh;
-   font-size:medium;
+   font-size:14px;
    font-family: Arial, sans-serif;
 
 }
@@ -26,16 +26,26 @@ header
 {
     grid-area: header;
     background-color:brown;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 header a
 {
     color:white;
     padding: 10px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+a:hover
+{
+    color: darkcyan;
+    background-color:darkgray;
 }
 a.logotext
 {
     color: white;
-    font-size: 40px;
+    background-color:transparent;
+    font-size: 36px;
     font-weight: bold;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -44,19 +54,31 @@ main
     grid-area: main;
     padding: 10px;
 }
-h1
-{
-    font-size: 25 px;
-}
+/*list card*/
 img
 {
     border-radius: 5px;
 }
 img.medium
 {
-    width: 400px;
-    height:300px;
+    width: 300px;
+    height:200px;
     background-color: black;
+}
+h1
+{
+    font-size: 25 px;
+    padding: 10px 0px;
+}
+h2
+{
+    color: black;
+    font-size: 18px;
+    padding: 2px 0;
+}
+h2:hover
+{
+    color: cadetblue;
 }
 .card
 {
@@ -71,9 +93,14 @@ img.medium
 }
 .card-body > *
 {
-    margin-bottom: 50px;
+    margin-bottom: 5px;
 
 }
+.price
+{
+    font-size: 18px;
+}
+/*list card end*/
 footer
 {
     grid-area:footer;
@@ -83,10 +110,6 @@ footer
 a
 {
     text-decoration: none;
-}
-a:hover
-{
-    color: darkcyan;
 }
 .row
 {
