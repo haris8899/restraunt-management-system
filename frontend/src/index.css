@@ -51,7 +51,7 @@ a.logotext
 {
     color: white;
     background-color:transparent;
-    font-size: 36px;
+    font-size: 24px;
     font-weight: bold;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -74,6 +74,7 @@ img.medium
 img.large
 {
     width: 100%;
+    max-width: 600px;
     height: auto;
     background-color: grey;
     
@@ -113,6 +114,29 @@ h2:hover
 {
     font-size: 18px;
 }
+.pricebox
+{
+    font-size: 28px;
+    padding: 10px;
+}
+.orderbutton
+{
+    font-size: 28px;
+    width:100%;
+    color: white;
+    background-color:brown;
+    border-radius: 10px;
+    border:none;
+    transition: 0.3s ease;
+}
+.orderbutton:hover
+{
+    background-color: goldenrod;
+}
+.orderbutton:active
+{
+    background-color: blue;
+}
 /*list card end*/
 footer
 {
@@ -135,22 +159,20 @@ a
 {
     justify-content: center;
 }
-.orderd
+.row.top {
+    align-items: flex-start;
+  }
+col-1
 {
-    font-size: 28px;
-    text-decoration: none;
-    padding: 10px;
-    align-items: left;
+    flex: 1 1 250px;
 }
-.details h1
+col-2
 {
-   font-weight: bold;
+    flex: 2 1 500px;
 }
 ul
 {
     list-style: none;
-}
-.orderd button
-{
-    width: 80%;
+    margin: 0;
+    padding: 0;
 }

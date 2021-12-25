@@ -13,12 +13,12 @@ function Fooddetails(props)
   }
   return (
     <div>
-      <div className="row">
-        <div className="col-lg-5 col-md-8 col-sm-12">
+      <div className="row top">
+        <div className="col-2">
         <img className="large" src={fitems.image} alt={fitems.name} />
         </div>
-        <div className="col-lg-3 col-md-5 col-sm-12">
-             <div className="details">
+        <div className="col-1">
+             <div className="row">
                 <ul>
                   <li><h1>{fitems.name}</h1></li>
                   <li>
@@ -28,12 +28,12 @@ function Fooddetails(props)
                 </ul>
              </div>
         </div>
-        <div className="col-lg-3 col-md-5 col-sm-12">
+        <div className="col-1">
                 <div className="card card-body">
-                  <div className="orderd">
+                  <div className="row">
                    <ul>
-                     <li>Price: Rs {fitems.price}</li>
-                      <ul><button type="button" class="btn btn-primary">Order</button></ul>
+                     <li><div className="pricebox">Price: Rs {fitems.price}</div></li>
+                      <ul><button className="orderbutton">Order</button></ul>
                    </ul>
                 </div>
              </div>
