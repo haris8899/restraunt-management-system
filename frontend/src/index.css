@@ -71,6 +71,13 @@ img.medium
     height:200px;
     background-color: black;
 }
+img.large
+{
+    width: 100%;
+    height: auto;
+    background-color: grey;
+    
+}
 h1
 {
     font-size: 25 px;
@@ -127,4 +134,23 @@ a
 .row.center
 {
     justify-content: center;
+}
+.orderd
+{
+    font-size: 28px;
+    text-decoration: none;
+    padding: 10px;
+    align-items: left;
+}
+.details h1
+{
+   font-weight: bold;
+}
+ul
+{
+    list-style: none;
+}
+.orderd button
+{
+    width: 80%;
 }

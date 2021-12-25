@@ -25,6 +25,14 @@ const data=
             price:450,
             description:"A very nice dish"
         },
+        {
+            _id:'4',
+            name:"Rogni Nan",
+            category:"Traditional",
+            image:"/images/fi4.jpg",
+            price:25,
+            description:"A very nice dish"
+        },
     ]
 }
 
