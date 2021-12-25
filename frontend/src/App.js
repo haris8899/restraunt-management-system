@@ -1,6 +1,7 @@
 import { BrowserRouter as Router,Routes, Route } from 'react-router-dom';
 import Fooddetails from './screens/Foodpage';
-import Homepage from './screens/home';
+import Menu from './screens/menu';
+import Homescreen from './screens/home';
 function App() {
   return (
      <Router>
@@ -10,13 +11,16 @@ function App() {
               <a className="logotext" href="/">Hazara Restaurant</a>
             </div>
           <div>
+            <a href="/">Home</a>
+            <a href="/Menu">Menu</a>
             <a href="/orders">Orders</a>
             <a href="/signin">Sign In</a>
           </div>
     </header>
      <main>
        <Routes>
-            <Route path="/" element={<Homepage />}></Route>
+            <Route path="/" element={<Homescreen />}></Route>
+            <Route path="/Menu" element={<Menu />}></Route>
             <Route path="fooditems/:id" element={<Fooddetails />}></Route>
        </Routes>
      </main>
