@@ -1,43 +1,33 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import Product from '../components/Fooditems';
+import React, { useEffect } from 'react';
+import data from "../data"
+import Fooditems from '../components/Fooditems';
 import Loadingcircle from '../components/loadingcircle';
 import MessageBox from '../components/messagebox';
-import Fooditems from '../components/Fooditems';
+import { useDispatch, useSelector } from 'react-redux';
+import { listMenu } from '../actions/menuactions';
 
-function Menu() {
-  const [fooditems, setfooditems] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+export default function HomeScreen() {
+  const dispatch = useDispatch();
+  const menuList = useSelector((state) => state.menuList);
+  const { loading, error, fooditems } = menuList;
+
   useEffect(() => {
-    const fecthData = async () => {
-      try {
-        setLoading(true);
-        const { data } = await axios.get('/api/fooditems');
-        setLoading(false);
-        setfooditems(data);
-      } catch (err) {
-        setError(err.message);
-        setLoading(false);
-      }
-    };
-    fecthData();
-  }, []);
+    dispatch(listMenu());
+  }, [dispatch]);
   return (
     <div>
-     {loading ? (
-       <div>Loading...</div>
-      ) :
-       error ? (
+      {loading ? (
+        <div>Loading...</div>
+        //<Loadingcircle></Loadingcircle>
+      ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <div className="row center">
-        {fooditems.map((fooditems) => (
+         {fooditems.map((fooditems) => (
           <Fooditems key={fooditems._id} fooditems={fooditems}></Fooditems>
         ))}
-      </div>
+        </div>
       )}
     </div>
   );
 }
-export default Menu

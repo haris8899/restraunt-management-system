@@ -5,7 +5,7 @@ import {
   MENU_SUCCESS,
 } from '../constants/menuconstants';
 
-export const menulist = () => async (dispatch) => {
+export const listMenu = () => async (dispatch) => {
   dispatch({
     type: MENU_REQUEST,
   });

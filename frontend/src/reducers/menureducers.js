@@ -12,7 +12,7 @@ const {
       case MENU_REQUEST:
         return { loading: true };
       case MENU_SUCCESS:
-        return { loading: false, products: action.payload };
+        return { loading: false, fooditems: action.payload };
       case MENU_FAIL:
         return { loading: false, error: action.payload };
       default:
