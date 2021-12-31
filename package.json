@@ -18,7 +18,13 @@
   },
   "homepage": "https://github.com/haris8899/restraunt-management-system#readme",
   "dependencies": {
-    "express": "^4.17.2"
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mui/material": "^5.2.6",
+    "express": "^4.17.2",
+    "react": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "react-spinners": "^0.11.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

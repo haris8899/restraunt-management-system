@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import data from "../data";
 
 function Fooddetails(props) 
@@ -33,7 +33,7 @@ function Fooddetails(props)
                   <div className="row">
                    <ul>
                      <li><div className="pricebox">Price: Rs {fitems.price}</div></li>
-                      <ul><button className="orderbutton">Order</button></ul>
+                      <ul><button className="button order">Order</button></ul>
                    </ul>
                 </div>
              </div>
