@@ -2,7 +2,7 @@ import express from 'express';
 import expressAsyncHandler from 'express-async-handler';
 import data from '../data.js';
 import menu from '../models/menuModel.js';
-
+import { isAdmin, isAuth } from '../utils.js';
 const menuRouter = express.Router();
 
 menuRouter.get(
@@ -31,6 +31,22 @@ menuRouter.get(
     } else {
       res.status(404).send({ message: 'Dish Not Found' });
     }
+  })
+);
+menuRouter.post(
+  '/',
+  isAuth,
+  isAdmin,
+  expressAsyncHandler(async (req, res) => {
+    const menu = new menu({
+      name: 'samle name ' + Date.now(),
+      image: '/images/p1.jpg',
+      price: 0,
+      category: 'sample category',
+      description: 'sample description',
+    });
+    const createdmenu = await menu.save();
+    res.send({ message: 'Item Created', menu: createdmenu });
   })
 );
 

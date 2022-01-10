@@ -8,6 +8,7 @@ import SignupPage from './screens/SignupPage';
 import Profilepage from './screens/profilepage';
 import Orderfinish from './screens/orderFinish';
 import Fooditems from './components/Fooditems';
+import Menuadminpage from './screens/menuadmin';
 import { useDispatch, useSelector } from 'react-redux';
 import { signout } from './actions/userActions';
 function App() {
@@ -48,6 +49,18 @@ function App() {
             ) : (
               <Link to="/signin">Sign In</Link>
             )}
+            {userInfo && userInfo.isAdmin && (
+              <div className="dropdown">
+                <Link to="#admin">
+                  Admin <i className="fa fa-caret-down"></i>
+                </Link>
+                <ul className="dropdown-content">
+                  <li>
+                    <Link to="/menulist">Menu Settings</Link>
+                  </li>
+                </ul>
+              </div>
+            )}
           </div>
     </header>
      <main>
@@ -62,6 +75,7 @@ function App() {
             <Route path='/signup' element={<SignupPage />}></Route>
             <Route path='/signin/orderfinish' element={<Orderfinish />}></Route>
             <Route path='/profile' element={<Profilepage />}></Route>
+            <Route path='/menulist' element={<Menuadminpage />}></Route>
        </Routes>
      </main>
     <footer className="row center">

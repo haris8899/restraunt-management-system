@@ -20,7 +20,7 @@ const data=
             name:"Boneless Handi",
             category:"Traditional",
             image:"/images/fi1.jpg",
-            price:540,
+            price:500,
             description:"A very nice dish"
         },
         {
@@ -43,6 +43,27 @@ const data=
             image:"/images/fi4.jpg",
             price:25,
             description:"A very nice dish"
+        },
+        {
+            name:"Chicken Pulao",
+            category:"Traditional",
+            image:"/images/fi7.jpg",
+            price:25,
+            description:"A very nice dish made from Rice vegetables and Chicken"
+        },
+        {
+            name:"Chicken Almond With Rice",
+            category:"International",
+            image:"/images/fi6.jpg",
+            price:25,
+            description:"A very nice dish made from Rice,Almonds,vegetables and Chickent"
+        },
+        {
+            name:"Chicken Speghetti",
+            category:"International",
+            image:"/images/fi5.jpg",
+            price:25,
+            description:"A very nice dish made from Noodles vegetables and Chicken"
         },
     ]
 }

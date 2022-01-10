@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import data from "../data"
 import Fooditems from '../components/Fooditems';
 import Loadingcircle from '../components/loadingcircle';
 import MessageBox from '../components/messagebox';
