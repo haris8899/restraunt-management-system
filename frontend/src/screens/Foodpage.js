@@ -2,17 +2,18 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { detailsItem } from '../actions/menuactions';
 import MessageBox from '../components/messagebox';
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function Fooddetails(props) 
 {
   const dispatch = useDispatch();
   const {id} = useParams();
+  const history=useNavigate();
   const itemDetails = useSelector((state) => state.itemdetail);
   const { loading, error, item } = itemDetails;
   const [qty, setQty] = useState(1);
   const OrderHandler = () => {
-    props.history.push(`/orders/${id}/${qty}`);
+    history(`/orders/${id}/${qty}`);
   };
   useEffect(() => {
     dispatch(detailsItem(id));

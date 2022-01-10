@@ -1,4 +1,4 @@
-import { BrowserRouter as Router,Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router,Routes, Route,Link } from 'react-router-dom';
 import Fooddetails from './screens/Foodpage';
 import Menu from './screens/menu';
 import Homescreen from './screens/home';
@@ -13,20 +13,20 @@ function App() {
     <div className="grid-container">
     <header className="row">
           <div>
-              <a className="logotext" href="/">Hazara Restaurant</a>
+              <Link className="logotext" to="/">Hazara Restaurant</Link>
             </div>
           <div>
-            <a href="/">Home</a>
-            <a href="/Menu">Menu</a>
-            <a href="/orders/:id?">Orders</a>
+            <Link to="/">Home</Link>
+            <Link to="/Menu">Menu</Link>
+            <Link to="/orders">Orders</Link>
            
-              <a href="/signin">Sign In</a>
+              <Link to="/signin">Sign In</Link>
           </div>
     </header>
      <main>
        <Routes>
-            <Route path="/orders/:pathParam1/:pathparam2" element={<Orderpage />}></Route>
-            <Route path="/orders/:pathParam" element={<Orderpage />}></Route>
+            <Route path="/orders/:id/:qty" element={<Orderpage />}></Route>
+            <Route path="/orders/:id" element={<Orderpage />}></Route>
             <Route path="/orders" element={<Orderpage />}></Route>
             <Route path="/" element={<Homescreen />}></Route>
             <Route path="/Menu" element={<Menu />}></Route>

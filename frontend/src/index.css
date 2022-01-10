@@ -69,6 +69,14 @@ img
 {
     border-radius: 5px;
 }
+.min-30 {
+    min-width: 300px;
+  }
+img.small {
+    max-width: 50px;
+    width: 100%;
+    height:auto;
+  }
 img.medium
 {
     width: 300px;
