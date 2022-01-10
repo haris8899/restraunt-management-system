@@ -1,15 +1,33 @@
+import React, { useEffect } from 'react';
+import data from "../data"
 import Fooditems from '../components/Fooditems';
-import data from '../data';
+import Loadingcircle from '../components/loadingcircle';
+import MessageBox from '../components/messagebox';
+import { useDispatch, useSelector } from 'react-redux';
+import { listMenu } from '../actions/menuactions';
 
-function Menu() {
+export default function HomeScreen() {
+  const dispatch = useDispatch();
+  const menuList = useSelector((state) => state.menuList);
+  const { loading, error, fooditems } = menuList;
+
+  useEffect(() => {
+    dispatch(listMenu());
+  }, [dispatch]);
   return (
     <div>
-      <div className="row center">
-        {data.fooditems.map((fooditems) => (
+      {loading ? (
+        <div>Loading...</div>
+        //<Loadingcircle></Loadingcircle>
+      ) : error ? (
+        <MessageBox variant="danger">{error}</MessageBox>
+      ) : (
+        <div className="row center">
+         {fooditems.map((fooditems) => (
           <Fooditems key={fooditems._id} fooditems={fooditems}></Fooditems>
         ))}
-      </div>
+        </div>
+      )}
     </div>
   );
 }
-export default Menu

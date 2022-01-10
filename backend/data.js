@@ -1,8 +1,22 @@
+import bcrypt from 'bcrypt'
 const data=
 {
+    users:[
+        {
+            name:"Haris",
+            email:"haris@gmail.com",
+            password: bcrypt.hashSync('1234', 8),
+            isAdmin: true,
+        },
+        {
+            name: 'John',
+            email: 'user@example.com',
+            password: bcrypt.hashSync('1234', 8),
+            isAdmin: false,
+        },
+    ],
     fooditems:[
         {
-            _id:'1',
             name:"Boneless Handi",
             category:"Traditional",
             image:"/images/fi1.jpg",
@@ -10,7 +24,6 @@ const data=
             description:"A very nice dish"
         },
         {
-            _id:'2',
             name:"Biryani",
             category:"Traditional",
             image:"/images/fi2.jpg",
@@ -18,7 +31,6 @@ const data=
             description:"A very nice dish"
         },
         {
-            _id:'3',
             name:"Karahi",
             category:"Traditional",
             image:"/images/fi3.jpg",
@@ -26,7 +38,6 @@ const data=
             description:"A very nice dish"
         },
         {
-            _id:'4',
             name:"Rogni Nan",
             category:"Traditional",
             image:"/images/fi4.jpg",

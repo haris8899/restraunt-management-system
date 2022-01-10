@@ -55,6 +55,10 @@ a.logotext
     font-weight: bold;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+a.lbutton
+{
+    background-color: transparent;
+}
 main
 {
     grid-area: main;
@@ -119,23 +123,27 @@ h2:hover
     font-size: 28px;
     padding: 10px;
 }
-.orderbutton
+button
 {
-    font-size: 28px;
-    width:100%;
+    font-size: 18px;
     color: white;
     background-color:brown;
     border-radius: 10px;
     border:none;
     transition: 0.3s ease;
 }
-.orderbutton:hover
+button:hover
 {
     background-color: goldenrod;
 }
-.orderbutton:active
+button:active
 {
     background-color: blue;
+}
+button.order
+{
+    font-size: 28px;
+    width:100%;
 }
 /*list card end*/
 footer
@@ -176,3 +184,51 @@ ul
     margin: 0;
     padding: 0;
 }
+.form {
+    max-width: 60rem;
+    margin: 0 auto;
+  }
+  .form > div {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+  }
+  .form label {
+    margin: 1rem 0;
+    display: block;
+  }
+.danger {
+    color: #a02020;
+  }
+  .alert {
+    padding: 1rem;
+    border: 0.1rem solid transparent;
+    border-radius: 0.5rem;
+  }
+  .alert-info {
+    color: #2020a0;
+    background-color: #e0e0ff;
+  }
+  .dropdown {
+    display: inline-block;
+    position: relative;
+  }
+  .dropdown-content {
+    position: absolute;
+    display: none;
+    right: 0;
+    min-width: 12rem;
+    padding: 1rem;
+    z-index: 1;
+    background-color: #203040;
+    margin: 0;
+    margin-top: 0.4rem;
+    border-radius: 0.5rem;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .alert-danger {
+    color: #a02020;
+    background-color: #ffe0e0;
+  }
