@@ -4,6 +4,7 @@ import Menu from './screens/menu';
 import Homescreen from './screens/home';
 import Orderpage from './screens/orderpage';
 import SigninPage from './screens/SigninPage';
+import SignupPage from './screens/SignupPage';
 import Fooditems from './components/Fooditems';
 import { useDispatch, useSelector } from 'react-redux';
 import { signout } from './actions/userActions';
@@ -53,6 +54,7 @@ function App() {
             <Route path="/Menu" element={<Menu />}></Route>
             <Route path="/fooditems/:id" element={<Fooddetails />}></Route>
             <Route path='/signin' element={<SigninPage />}></Route>
+            <Route path='/signup' element={<SignupPage />}></Route>
        </Routes>
      </main>
     <footer className="row center">

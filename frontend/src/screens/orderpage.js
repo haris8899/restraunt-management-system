@@ -86,7 +86,7 @@ function Orderpage(props) {
               <button
                 type="button"
                 onClick={confirmOrderHandler}
-                className="primary block"
+                className="button order"
                 disabled={orderItems.length === 0}
               >
                 Finish Order
