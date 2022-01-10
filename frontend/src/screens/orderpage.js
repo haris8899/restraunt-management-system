@@ -22,7 +22,7 @@ function Orderpage(props) {
   
 
   const confirmOrderHandler = () => {
-    history('/signin?redirect=OrderFinish');
+    history('/signin?redirect=orderfinish');
   };
     return (
       <div className="row top">

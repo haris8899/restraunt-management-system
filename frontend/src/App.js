@@ -5,6 +5,8 @@ import Homescreen from './screens/home';
 import Orderpage from './screens/orderpage';
 import SigninPage from './screens/SigninPage';
 import SignupPage from './screens/SignupPage';
+import Profilepage from './screens/profilepage';
+import Orderfinish from './screens/orderFinish';
 import Fooditems from './components/Fooditems';
 import { useDispatch, useSelector } from 'react-redux';
 import { signout } from './actions/userActions';
@@ -34,6 +36,9 @@ function App() {
                 </Link>
                 <ul className="dropdown-content">
                   <li>
+                    <Link to="/profile">User Profile</Link>
+                  </li>
+                  <li>
                     <Link to="#signout" onClick={signoutHandler}>
                       Sign Out
                     </Link>
@@ -55,6 +60,8 @@ function App() {
             <Route path="/fooditems/:id" element={<Fooddetails />}></Route>
             <Route path='/signin' element={<SigninPage />}></Route>
             <Route path='/signup' element={<SignupPage />}></Route>
+            <Route path='/signin/orderfinish' element={<Orderfinish />}></Route>
+            <Route path='/profile' element={<Profilepage />}></Route>
        </Routes>
      </main>
     <footer className="row center">

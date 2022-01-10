@@ -225,13 +225,17 @@ ul
     position: absolute;
     display: none;
     right: 0;
-    min-width: 12rem;
-    padding: 1rem;
+    min-width: 180px;
+    padding: 10px;
     z-index: 1;
-    background-color: #203040;
+    background-color:darkslategrey;
     margin: 0;
     margin-top: 0.4rem;
     border-radius: 0.5rem;
+  }
+  .dropdown-content li
+  {
+     padding: 20px;
   }
   .dropdown:hover .dropdown-content {
     display: block;
