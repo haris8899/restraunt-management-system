@@ -1,4 +1,4 @@
-import { ORDER_ADD_ITEM ,ORDER_REMOVE_ITEM} from '../constants/orderconstants';
+import { ORDER_ADD_ITEM , ORDER_REMOVE_ITEM} from '../constants/orderconstants';
 
 export const orderReducer = (state = { orderItems: [] }, action) => {
   switch (action.type) {

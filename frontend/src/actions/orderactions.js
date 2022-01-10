@@ -1,5 +1,5 @@
 import Axios from 'axios';
-import { ORDER_ADD_ITEM,ORDER_REMOVE_ITEM } from '../constants/orderconstants';
+import { ORDER_ADD_ITEM , ORDER_REMOVE_ITEM } from '../constants/orderconstants';
 
 export const addToOrder = (id, qty) => async (dispatch, getState) => {
   const { data } = await Axios.get(`/api/fooditems/${id}`);
@@ -19,4 +19,4 @@ export const addToOrder = (id, qty) => async (dispatch, getState) => {
 export const removeFromOrder = (id) => (dispatch, getState) => {
     dispatch({ type: ORDER_REMOVE_ITEM, payload: id });
     localStorage.setItem('orderItems', JSON.stringify(getState().order.orderItems));
-};
+  };

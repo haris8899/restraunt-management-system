@@ -8,6 +8,12 @@ import Fooditems from './components/Fooditems';
 import { useDispatch, useSelector } from 'react-redux';
 import { signout } from './actions/userActions';
 function App() {
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo } = userSignin;
+  const dispatch = useDispatch();
+  const signoutHandler = () => {
+    dispatch(signout());
+  };
   return (
      <Router>
     <div className="grid-container">
@@ -20,7 +26,22 @@ function App() {
             <Link to="/Menu">Menu</Link>
             <Link to="/orders">Orders</Link>
            
+            {userInfo ? (
+              <div className="dropdown">
+                <Link to="#">
+                  {userInfo.name} <i className="fa fa-caret-down"></i>{' '}
+                </Link>
+                <ul className="dropdown-content">
+                  <li>
+                    <Link to="#signout" onClick={signoutHandler}>
+                      Sign Out
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            ) : (
               <Link to="/signin">Sign In</Link>
+            )}
           </div>
     </header>
      <main>
