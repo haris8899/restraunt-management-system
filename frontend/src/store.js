@@ -4,6 +4,8 @@ import {
       menuListReducer ,
       itemDetailsReducer,
       menuCreateReducer,
+      menuUpdateReducer,
+      menuDeleteReducer,
 } from './reducers/menureducers';
 import { orderReducer } from './reducers/orderreducers';
 import { 
@@ -32,6 +34,8 @@ const reducer = combineReducers({
   userSignup: userSignupReducer,
   userDetails: userDetailsReducer,
   menuCreate: menuCreateReducer,
+  menuUpdate:menuUpdateReducer,
+  menuDelete:menuDeleteReducer,
   order:orderReducer,
 });
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

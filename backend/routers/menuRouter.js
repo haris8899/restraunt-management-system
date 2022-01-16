@@ -1,6 +1,7 @@
 import express from 'express';
 import expressAsyncHandler from 'express-async-handler';
 import data from '../data.js';
+import Menu from '../models/menuModel.js';
 import menu from '../models/menuModel.js';
 import { isAdmin, isAuth } from '../utils.js';
 const menuRouter = express.Router();
@@ -33,21 +34,53 @@ menuRouter.get(
     }
   })
 );
+menuRouter.put(
+  '/:id',
+  isAuth,
+  isAdmin,
+  expressAsyncHandler(async (req, res) => {
+    const menu = await Menu.findById(req.params.id);
+    if (menu) {
+      menu.name = req.body.name;
+      menu.price = req.body.price;
+      menu.image = req.body.image;
+      menu.category = req.body.category;
+      menu.description = req.body.description;
+      const updatedmenu = await menu.save();
+      res.send({ message: 'Item Updated', menu: updatedmenu });
+    } else {
+      res.status(404).send({ message: 'Product Not Found' });
+    }
+  })
+);
 menuRouter.post(
   '/',
   isAuth,
   isAdmin,
   expressAsyncHandler(async (req, res) => {
-    const menu = new menu({
-      name: 'samle name ' + Date.now(),
-      image: '/images/p1.jpg',
-      price: 0,
+    const menu = new Menu({
+      name: 'sample name ' + Date.now(),
+      image: '/images/nf.jpg',
       category: 'sample category',
       description: 'sample description',
+      price: 0,
     });
     const createdmenu = await menu.save();
     res.send({ message: 'Item Created', menu: createdmenu });
   })
 );
-
+menuRouter.delete(
+  '/:id',
+  isAuth,
+  isAdmin,
+  expressAsyncHandler(async (req, res) => {
+    const menu = await Menu.findById(req.params.id);
+    if (menu) {
+      const deleteitem = await menu.remove();
+      res.send({ message: 'Product Deleted', product: deleteitem });
+    } else {
+      res.status(404).send({ message: 'item Not Found' });
+    }
+  })
+);
 export default menuRouter;

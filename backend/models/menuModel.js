@@ -12,6 +12,6 @@ const menuSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
-const Menu = mongoose.model('Product', menuSchema);
+const Menu = mongoose.model('menuitem', menuSchema);
 
 export default Menu;
